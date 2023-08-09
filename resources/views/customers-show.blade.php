@@ -15,7 +15,8 @@
 
                 <div class="d-flex justify-content-between">
                     <div class="bg-warning m-2 p-1 rounded">
-                        <a href="" class="text-decoration-none text-secondary-emphasis">
+                        <a href="{{ route('plans.show', $customer->id) }}"
+                            class="text-decoration-none text-secondary-emphasis">
                             Workout plans
                         </a>
                     </div>
@@ -25,6 +26,7 @@
                         </a>
                     </div>
                 </div>
+
             </div>
         @endforeach
     </div>
