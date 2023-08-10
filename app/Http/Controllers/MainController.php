@@ -15,11 +15,17 @@ class MainController extends Controller
         return view('customers-show', compact('customers'));
     }
 
-    public function show($id)
+    public function showPlan($id)
     {
-        $plans = Plan::FindOrFail($id);
-        // dd($plans);
+        $customers = Customer::FindOrFail($id);
 
-        return view('plans-show', compact('plans'));
+        return view('plans-show', compact('customers'));
+    }
+
+    public function showAccount($id)
+    {
+        $customers = Customer::FindOrFail($id);
+
+        return view('accounting-show', compact('customers'));
     }
 }

@@ -21,7 +21,8 @@
                         </a>
                     </div>
                     <div class="bg-danger m-2 p-1 rounded">
-                        <a href="" class="text-decoration-none text-secondary-emphasis">
+                        <a href="{{ route('accounting.show', $customer->id) }}"
+                            class="text-decoration-none text-secondary-emphasis">
                             Accounting
                         </a>
                     </div>

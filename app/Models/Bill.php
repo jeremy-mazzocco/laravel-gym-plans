@@ -16,6 +16,6 @@ class Bill extends Model
 
     public function accountings()
     {
-        return $this->hasMany(Accounting::class);
+        return $this->belongsToMany(Accounting::class);
     }
 }

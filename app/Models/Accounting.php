@@ -15,16 +15,15 @@ class Accounting extends Model
         'paid',
         'method_paid',
 
-        'customer_id'
     ];
 
     public function customer()
     {
-        return $this->hasOne(Customer::class);
+        return $this->belongsToMany(Customer::class);
     }
 
     public function bills()
     {
-        return $this->hasMany(Bill::class);
+        return $this->belongsToMany(Bill::class);
     }
 }

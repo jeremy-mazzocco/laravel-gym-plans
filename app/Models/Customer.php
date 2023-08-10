@@ -27,6 +27,6 @@ class Customer extends Model
 
     public function accounting()
     {
-        return $this->hasOne(Accounting::class);
+        return $this->belongsToMany(Accounting::class);
     }
 }

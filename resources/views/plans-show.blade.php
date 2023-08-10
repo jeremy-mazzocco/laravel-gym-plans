@@ -2,24 +2,27 @@
 
 @section('content')
     <div class="container-fluid w-75 row m-auto">
-        {{-- @foreach ($plans as $plan) --}}
-        <div class="col-3 border border-2 ">
-            <div><span class="fw-semibold">WO: </span>{{ $plans->name_of_workout }}</div>
-            <span><span class="fw-semibold">Kind: </span>{{ $plans->kind_of_workout }}</span>
+        @foreach ($customers->plans as $plan)
+            <div class="col-3 border border-2 ">
 
-            <div><span class="fw-semibold">Series: </span>{{ $plans->series }}</div>
-            <div><span class="fw-semibold">Repetitions: </span>{{ $plans->repetitions }}</div>
-            <span><span class="fw-semibold">Rest: </span>{{ $plans->rest_time }} - </span>
+                <div class="fw-semibold text-center my-1">PLAN NUMBER: {{ $plan->id }}</div>
 
-            <div class="d-flex justify-content-between">
-                <div class="bg-warning m-2 p-1 rounded">
-                    <a href="" class="text-decoration-none text-secondary-emphasis">
-                        Back
-                    </a>
+                <div><span class="fw-semibold">WO: </span>{{ $plan->name_of_workout }}</div>
+                <span><span class="fw-semibold">Goal: </span>{{ $plan->kind_of_workout }}</span>
+
+                <div><span class="fw-semibold">Series: </span>{{ $plan->series }}</div>
+                <div><span class="fw-semibold">Repetitions: </span>{{ $plan->repetitions }}</div>
+                <span><span class="fw-semibold">Rest: </span>{{ $plan->rest_time }} seconds </span>
+
+                <div class="d-flex justify-content-between">
+                    <div class="bg-warning m-2 p-1 rounded">
+                        <a href="{{ route('customers.show') }}" class="text-decoration-none text-secondary-emphasis">
+                            Back
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        {{-- @endforeach --}}
+        @endforeach
 
     </div>
 @endsection
