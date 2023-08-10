@@ -4,7 +4,7 @@
     <div class="container-fluid w-75 row m-auto">
         @foreach ($customers as $customer)
             <div class="col-3 border border-2 ">
-                <div>ID: {{ $customer->id }}</div>
+                <div>Customer - ID: {{ $customer->id }}</div>
                 <span><span class="fw-semibold">Name: </span>{{ $customer->name }}</span>
                 <span>{{ $customer->lastname }}</span>
                 <div><span class="fw-semibold">Born: </span>{{ $customer->date_of_birth }}</div>

@@ -1,16 +1,23 @@
-{{-- @extends('layout')
+@extends('layout')
 
 @section('content')
     <div class="container-fluid w-75 row m-auto">
-        @foreach ($customers->accountings as $accounting)
-            <div class="col-3 border border-2 ">
+        @foreach ($accounting as $accounting)
+            <div class="col-12 border border-2 ">
 
-                <div class="fw-semibold text-center my-1">PLAN NUMBER: {{ $accounting->Month_of_the_year }}</div>
+                <div class="fw-semibold">Month: {{ $accounting->Month_of_the_year }}</div>
 
-                <div><span class="fw-semibold">WO: </span>{{ $accounting->method_paid }}</div>
-                <span><span class="fw-semibold">Goal: </span>{{ $accounting->paid }}</span>
+                <div><span class="fw-semibold">Pay method: </span>{{ $accounting->method_paid }}</div>
+                <span>
+                    <span class="fw-semibold">Paid: </span>
+                    @if ($accounting->paid)
+                        Yes
+                    @else
+                        No
+                    @endif
+                </span>
 
-                <div><span class="fw-semibold">Series: </span>{{ $accounting->IBAN }}</div>
+                <div><span class="fw-semibold">IBAN: </span>{{ $accounting->IBAN }}</div>
 
                 <div class="d-flex justify-content-between">
                     <div class="bg-warning m-2 p-1 rounded">
@@ -23,4 +30,4 @@
         @endforeach
 
     </div>
-@endsection --}}
+@endsection

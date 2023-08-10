@@ -16,10 +16,10 @@ class AccountingTableSeeder extends Seeder
      */
     public function run()
     {
-        $accountings = Accounting::factory()->count(80)->create();
+        $accountings = Accounting::factory()->count(10)->create();
 
         foreach ($accountings as $accounting) {
-            $customer = Customer::inRandomOrder()->limit(rand(1, 12))->get();
+            $customer = Customer::inRandomOrder()->limit(rand(1, 10))->get();
 
             $accounting->customer()->attach($customer);
         }

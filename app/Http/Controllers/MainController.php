@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Accounting;
 use App\Models\Customer;
 use App\Models\Plan;
 use Illuminate\Http\Request;
@@ -25,7 +26,8 @@ class MainController extends Controller
     public function showAccount($id)
     {
         $customers = Customer::FindOrFail($id);
+        $accounting = Accounting::all();
 
-        return view('accounting-show', compact('customers'));
+        return view('accounting-show', compact('customers', 'accounting'));
     }
 }
