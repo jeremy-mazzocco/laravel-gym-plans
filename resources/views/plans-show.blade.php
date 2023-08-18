@@ -5,7 +5,7 @@
         @foreach ($customers->plans as $plan)
             <div class="col-3 border border-2 ">
 
-                <div class="fw-semibold text-center my-1">PLAN NUMBER: {{ $plan->id }}</div>
+                <div class="fw-semibold text-center my-1">PLAN ID: {{ $plan->id }}</div>
 
                 <div><span class="fw-semibold">WO: </span>{{ $plan->name_of_workout }}</div>
                 <span><span class="fw-semibold">Goal: </span>{{ $plan->kind_of_workout }}</span>

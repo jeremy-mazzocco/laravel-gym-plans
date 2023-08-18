@@ -19,8 +19,8 @@ class PlanFactory extends Factory
         return [
             "name_of_workout" => fake()->randomElement(['SuperSet', 'Piramid', 'Strip', 'Method Bautata', 'Fast Gain']),
             "kind_of_workout" => fake()->randomElement(['Definition', 'Mass', 'Ipertrophy', 'Mass/Power', 'Power']),
-            "series" => fake()->randomFloat(0, 3, 8),
-            "repetitions" => fake()->randomFloat(0, 5, 15),
+            "series" => fake()->randomFloat(0, 3, 5),
+            "repetitions" => fake()->randomFloat(0, 5, 12),
             "rest_time" => fake()->randomElement([40, 60, 90, 120])
         ];
     }

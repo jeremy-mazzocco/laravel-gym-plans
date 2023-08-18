@@ -17,6 +17,7 @@ class CustomerFactory extends Factory
     public function definition()
     {
         return [
+            "user_unique" => fake()->numerify('costumer-####'),
             "name" => fake()->name(),
             "lastname" => fake()->lastName(),
             "date_of_birth" => fake()->dateTimeBetween('-60 year', '-20 year'),

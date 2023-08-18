@@ -4,15 +4,17 @@
     <div class="container-fluid w-75 row m-auto">
         @foreach ($customers as $customer)
             <div class="col-3 border border-2 ">
-                <div>Customer - ID: {{ $customer->id }}</div>
-                <span><span class="fw-semibold">Name: </span>{{ $customer->name }}</span>
-                <span>{{ $customer->lastname }}</span>
-                <div><span class="fw-semibold">Born: </span>{{ $customer->date_of_birth }}</div>
-                <div><span class="fw-semibold">Address: </span>{{ $customer->address }}</div>
-                <span><span class="fw-semibold">Type: </span>{{ $customer->kind_of_subscription }} - </span>
-                <span><span class="fw-semibold text-left">End date:</span>{{ $customer->end_subscription }}</span>
-                <div><span class="fw-semibold">Customer goal: </span>{{ $customer->goal }}</div>
+                <div class="text-center my-2 fs-4">ID: {{ $customer->user_unique }}</div>
 
+                <div class="my-2 fs-6">
+                    <span><span class="fw-semibold">Name: </span>{{ $customer->name }}</span>
+                    <span>{{ $customer->lastname }}</span>
+                    <div><span class="fw-semibold">Born: </span>{{ $customer->date_of_birth }}</div>
+                    <div><span class="fw-semibold">Address: </span>{{ $customer->address }}</div>
+                    <div><span class="fw-semibold">Type: </span>{{ $customer->kind_of_subscription }}</div>
+                    <div><span class="fw-semibold text-left">End date: </span>{{ $customer->end_subscription }}</div>
+                    <div><span class="fw-semibold">Customer goal: </span>{{ $customer->goal }}</div>
+                </div>
                 <div class="d-flex justify-content-between">
                     <div class="bg-warning m-2 p-1 rounded">
                         <a href="{{ route('plans.show', $customer->id) }}"

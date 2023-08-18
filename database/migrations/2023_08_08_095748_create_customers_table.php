@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
 
+            $table->string('user_unique');
             $table->string('name', 64);
             $table->string('lastname', 64);
             $table->date('date_of_birth');
