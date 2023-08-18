@@ -4,9 +4,12 @@ use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 
-
+// HOME
 Route::get('/', [MainController::class, 'index'])->name('customers.show');
-Route::get('/edit/customer/{id}', [MainController::class, 'customerEdit'])->name('customer.edit');
+
+// CUSTOMER
+Route::get('/customer/{id}/edit', [MainController::class, 'customerEdit'])->name('customer.edit');
+Route::put('/customer/{id}/update', [MainController::class, 'customerUpdate'])->name('customer.update');
 
 
 Route::get('/plans/{id}', [MainController::class, 'showPlan'])->name('plans.show');
