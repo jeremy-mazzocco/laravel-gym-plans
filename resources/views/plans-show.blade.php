@@ -15,9 +15,17 @@
                 <span><span class="fw-semibold">Rest: </span>{{ $plan->rest_time }} seconds </span>
 
                 <div class="d-flex justify-content-between">
-                    <div class="bg-warning m-2 p-1 rounded">
+                    <div class="bg-success m-2 p-1 rounded">
                         <a href="{{ route('customers.show') }}" class="text-decoration-none text-secondary-emphasis">
                             Back
+                        </a>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between text-center">
+                    <div class="bg-dark m-2 p-1 rounded w-50 ">
+                        <a href="{{ route('customer.edit', $customer->id) }}" class="text-decoration-none text-light">
+                            Edit
                         </a>
                     </div>
                 </div>

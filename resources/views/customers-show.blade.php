@@ -24,7 +24,7 @@
                         </a>
                     </div>
                     <div class="bg-secondary my-2 p-1 rounded w-50">
-                        <a href="{{ route('accounting.show', $customer->id) }}"
+                        <a href="{{ route('accountings.show', $customer->id) }}"
                             class="text-decoration-none text-secondary-emphasis">
                             Accounting
                         </a>
@@ -35,12 +35,6 @@
                     <div class="bg-dark m-2 p-1 rounded w-50 ">
                         <a href="{{ route('customer.edit', $customer->id) }}" class="text-decoration-none text-light">
                             Edit
-                        </a>
-                    </div>
-                    <div class="bg-danger my-2 p-1 rounded w-50">
-                        <a href="{{ route('accounting.show', $customer->id) }}"
-                            class="text-decoration-none text-secondary-emphasis">
-                            Delete
                         </a>
                     </div>
                 </div>

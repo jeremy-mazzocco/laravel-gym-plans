@@ -12,14 +12,12 @@ class MainController extends Controller
     public function index()
     {
         $customers = Customer::all();
-
         return view('customers-show', compact('customers'));
     }
 
     public function customerEdit($id)
     {
         $customer = Customer::FindOrFail($id);
-
         return view('customer-edit', compact('customer'));
     }
 
@@ -29,30 +27,54 @@ class MainController extends Controller
         $data = $request->validate([
             'name' => "required|string|min:3|max:64",
             'lastname' => "required|string|min:3|max:64",
-            'date_of_birth' => "required|date",
             'address' => "required|string|min:3|max:64",
-            'kind_of_subscription' => "required|string|min:3|max:64",
-            'end_subscription' => "required|date",
-            'goal' => "nullable|string"
         ]);
-
-        $customer = customerUpdate($data);
-        $customer->plans()->sync($data['plans']);
+        $customer->update($data);
         return redirect()->route('customers.show');
     }
 
-    public function showPlan($id)
+
+
+    public function plansShow($id)
     {
         $customers = Customer::FindOrFail($id);
-
         return view('plans-show', compact('customers'));
     }
 
-    public function showAccount($id)
+    public function plansEdit($id)
+    {
+        $plan = Plan::FindOrFail($id);
+        return view('plans-edit', compact('plan'));
+    }
+
+    public function plansUpdate(Request $request, $id)
+    {
+        $plan = Plan::FindOrFail($id);
+        $data = $request->all();
+        $plan->update($data);
+        return redirect()->route('plans.show');
+    }
+
+
+
+    public function accountShow($id)
     {
         $customers = Customer::FindOrFail($id);
         $accounting = Accounting::all();
-
         return view('accounting-show', compact('customers', 'accounting'));
+    }
+
+    public function accountEdit($id)
+    {
+        $account = Accounting::FindOrFail($id);
+        return view('accounting-edit', compact('account'));
+    }
+
+    public function accountUpdate(Request $request, $id)
+    {
+        $account = Accounting::FindOrFail($id);
+        $data = $request->all();
+        $account->update($data);
+        return redirect()->route('accountings.show');
     }
 }
