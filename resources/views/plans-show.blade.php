@@ -25,6 +25,13 @@
                             Edit
                         </a>
                     </div>
+                    <form method="POST" action="{{ route('plans.delete', $plan->id) }}">
+
+                        @csrf
+                        @method('DELETE')
+
+                        <input class="btn btn-danger m-2 px-3 py-1 rounded" type="submit" value="Delete">
+                    </form>
                 </div>
 
             </div>

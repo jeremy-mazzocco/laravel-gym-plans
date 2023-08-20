@@ -55,6 +55,13 @@ class MainController extends Controller
         return redirect()->route('customers.show');
     }
 
+    public function plansDelete($id)
+    {
+        $plan = Plan::findOrFail($id);
+        $plan->delete();
+        return redirect()->route('customers.show');
+    }
+
 
 
     public function accountShow($id)
