@@ -22,6 +22,12 @@ Route::delete('/plans/{id}/delete', [MainController::class, 'plansDelete'])
 
 
 // ACCOUNTING
+
+// Route::get('/accounting/create', [MainController::class, 'accountCreate'])
+//     ->name('accounting.create');
+// Route::post('/accounting/store', [MainController::class, 'accountStore'])
+//     ->name('accounting.store');
+
 Route::get('/accounting/{id}', [MainController::class, 'accountShow'])->name('accountings.show');
 Route::get('/accounting/{id}/edit', [MainController::class, 'accountEdit'])->name('accounting.edit');
 Route::put('/accounting/{id}/update', [MainController::class, 'accountUpdate'])->name('accounting.update');

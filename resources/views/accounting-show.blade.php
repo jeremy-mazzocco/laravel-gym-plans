@@ -1,7 +1,14 @@
-@extends('layout')
+{{-- @extends('layout')
 
 @section('content')
     <div class="container-fluid w-75 row m-auto">
+
+        <div class="bg-dark m-2 px-4 py-1 rounded">
+            <a href="{{ route('accounting.create', $accounting->id) }}" class="text-decoration-none text-light">
+                Create
+            </a>
+        </div>
+
         @foreach ($accountings as $accounting)
             <div class="col-12 border border-2 ">
 
@@ -36,4 +43,4 @@
         @endforeach
 
     </div>
-@endsection
+@endsection --}}
