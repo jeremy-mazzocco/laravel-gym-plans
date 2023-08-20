@@ -14,8 +14,8 @@
                 <div><span class="fw-semibold">Repetitions: </span>{{ $plan->repetitions }}</div>
                 <span><span class="fw-semibold">Rest: </span>{{ $plan->rest_time }} seconds </span>
 
-                <div class="d-flex justify-content-between">
-                    <div class="bg-success m-2 p-1 rounded">
+                <div class="d-flex ">
+                    <div class="bg-success m-2 px-4 py-1 rounded">
                         <a href="{{ route('customers.show') }}" class="text-decoration-none text-secondary-emphasis">
                             Back
                         </a>
