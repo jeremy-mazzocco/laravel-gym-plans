@@ -3,48 +3,41 @@
 @section('content')
     <div class="col-3 my-2 border border-2">
 
-        <form method="POST" action="{{ route('customer.update', $customer->id) }}">
+        <form method="POST" action="{{ route('plans.update', $plan->id) }}">
 
             @csrf
             @method('PUT')
 
-            <div class="text-center fs-4">ID: {{ $customer->user_unique }}</div>
-
             <div class="fs-6 my-2">
 
                 <div class="my-1">
-                    <label class="fw-semibold" for="name">Name: </label>
-                    <input type="text" name="name" id="name" value="{{ $customer->name }}">
+                    <label class="fw-semibold" for="plan">Plan: </label>
+                    <input type="text" name="plan" id="plan" value="{{ $plan->id }}">
                 </div>
 
                 <div class="my-1">
-                    <label class="fw-semibold" for="lastname">Lastname: </label>
-                    <input type="text" name="lastname" id="lastname" value="{{ $customer->lastname }}">
+                    <label class="fw-semibold" for="wo">WO: </label>
+                    <input type="text" name="wo" id="wo" value="{{ $plan->name_of_workout }}">
                 </div>
 
                 <div class="my-1">
-                    <label class="fw-semibold" for="born">Born: </label>
-                    <input type="text" name="born" id="born" value="{{ $customer->date_of_birth }}">
+                    <label class="fw-semibold" for="goal">Goal: </label>
+                    <input type="text" name="goal" id="goal" value="{{ $plan->kind_of_workout }}">
                 </div>
 
                 <div class="my-1">
-                    <label class="fw-semibold" for="address">Address: </label>
-                    <input type="text" name="address" id="address" value="{{ $customer->address }}">
+                    <label class="fw-semibold" for="series">Series: </label>
+                    <input type="text" name="series" id="series" value="{{ $plan->series }}">
                 </div>
 
                 <div class="my-1">
-                    <label class="fw-semibold" for="type">Type: </label>
-                    <input type="text" name="type" id="type" value="{{ $customer->kind_of_subscription }}">
+                    <label class="fw-semibold" for="repetitions">Repetitions: </label>
+                    <input type="text" name="repetitions" id="repetitions" value="{{ $plan->repetitions }}">
                 </div>
 
                 <div class="my-1">
-                    <label class="fw-semibold" for="end">End date: </label>
-                    <input type="text" name="end" id="end" value="{{ $customer->end_subscription }}">
-                </div>
-
-                <div class="my-1">
-                    <label class="fw-semibold" for="goal">Customer goal: </label>
-                    <input type="text" name="goal" id="goal" value="{{ $customer->goal }}">
+                    <label class="fw-semibold" for="rest">Rest: </label>
+                    <input type="text" name="rest" id="rest" value="{{ $plan->rest_time }}">
                 </div>
 
                 <input class="btn btn-dark my-3" type="submit" value="UPDATE">

@@ -52,16 +52,16 @@ class MainController extends Controller
         $plan = Plan::FindOrFail($id);
         $data = $request->all();
         $plan->update($data);
-        return redirect()->route('plans.show');
+        return redirect()->route('plans.show', $plan->id);
     }
 
 
 
     public function accountShow($id)
     {
-        $customers = Customer::FindOrFail($id);
-        $accounting = Accounting::all();
-        return view('accounting-show', compact('customers', 'accounting'));
+        $customer = Customer::FindOrFail($id);
+        $accountings = Accounting::all();
+        return view('accounting-show', compact('customer', 'accountings'));
     }
 
     public function accountEdit($id)
@@ -75,6 +75,6 @@ class MainController extends Controller
         $account = Accounting::FindOrFail($id);
         $data = $request->all();
         $account->update($data);
-        return redirect()->route('accountings.show');
+        return redirect()->route('accountings.show', $account->id);
     }
 }

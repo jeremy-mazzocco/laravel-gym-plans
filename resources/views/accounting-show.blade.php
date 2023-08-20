@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container-fluid w-75 row m-auto">
-        @foreach ($accounting as $accounting)
+        @foreach ($accountings as $accounting)
             <div class="col-12 border border-2 ">
 
                 <div class="fw-semibold my-2">Month: {{ $accounting->Month_of_the_year }}</div>
