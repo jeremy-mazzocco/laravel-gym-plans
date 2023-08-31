@@ -32,6 +32,11 @@
 
                 <input class="btn btn-dark my-3" type="submit" value="UPDATE">
             </div>
+            <div class="bg-success m-2 px-4 py-1 rounded">
+                <a href="{{ route('customers.show') }}" class="text-decoration-none text-secondary-emphasis">
+                    Back
+                </a>
+            </div>
 
         </form>
 

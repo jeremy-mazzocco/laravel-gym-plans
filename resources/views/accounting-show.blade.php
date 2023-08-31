@@ -1,11 +1,11 @@
-{{-- @extends('layout')
+@extends('layout')
 
 @section('content')
     <div class="container-fluid w-75 row m-auto">
 
-        <div class="bg-dark m-2 px-4 py-1 rounded">
-            <a href="{{ route('accounting.create', $accounting->id) }}" class="text-decoration-none text-light">
-                Create
+        <div class="bg-dark col-2 m-4 px-4 py-1 rounded text-center">
+            <a href="{{ route('accounting.create') }}" class="text-decoration-none text-light">
+                Make a new Bill
             </a>
         </div>
 
@@ -43,4 +43,4 @@
         @endforeach
 
     </div>
-@endsection --}}
+@endsection

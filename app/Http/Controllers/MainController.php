@@ -63,18 +63,19 @@ class MainController extends Controller
     }
 
 
-    // public function accountCreate()
-    // {
-    //     $accounting = Accounting::all();
-    //     return view('accounting-create', compact('accounting'));
-    // }
+    public function accountCreate()
+    {
+        $accounting = Accounting::all();
+        return view('accounting-create', compact('accounting'));
+    }
 
-    // public function accountStore(Request $request)
-    // {
-    //     $data = $request->all();
-    //     $accounting = Accounting::create($data);
-    //     return redirect()->route('accountings.show', $accounting->id);
-    // }
+    public function accountStore(Request $request)
+    {
+        $data = $request->all();
+        dd($data);
+        $accounting = Accounting::create($data);
+        return redirect()->route('accountings.show', $accounting->id);
+    }
 
     public function accountShow($id)
     {
