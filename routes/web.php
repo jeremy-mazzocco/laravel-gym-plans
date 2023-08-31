@@ -31,3 +31,5 @@ Route::post('/accounting/store', [MainController::class, 'accountStore'])
 Route::get('/accounting/{id}', [MainController::class, 'accountShow'])->name('accountings.show');
 Route::get('/accounting/{id}/edit', [MainController::class, 'accountEdit'])->name('accounting.edit');
 Route::put('/accounting/{id}/update', [MainController::class, 'accountUpdate'])->name('accounting.update');
+Route::delete('/accounting/{id}/delete', [MainController::class, 'accountDelete'])
+    ->name('accounting.delete');

@@ -19,7 +19,7 @@ class AccountingFactory extends Factory
         return [
             "Month_of_the_year" => fake()->monthName(),
             "IBAN" => fake()->iban('NL'),
-            "paid" => fake()->boolean(),
+            "paid" => fake()->randomElement(['Yes', 'No']),
             "method_paid" => fake()->randomElement(['Mastercard', 'VISA', 'Cash', 'Direct Debit'])
         ];
     }

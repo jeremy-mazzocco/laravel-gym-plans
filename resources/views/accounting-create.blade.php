@@ -9,13 +9,13 @@
             @method('POST')
 
             <div class="my-3">
-                <label class="fw-semibold" for="Month_of_the_year">Month: </label>
-                <input type="text" name="Month_of_the_year" id="Month_of_the_year">
+                <label class="fw-semibold" for="month">Month: </label>
+                <input type="text" name="Month_of_the_year" id="month">
             </div>
 
             <div class="my-3">
                 <label class="fw-semibold" for="method">Pay method: </label>
-                <input type="text" name="method" id="method">
+                <input type="text" name="method_paid" id="method">
             </div>
 
             <div class="my-3">

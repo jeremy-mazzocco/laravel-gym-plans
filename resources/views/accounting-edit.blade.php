@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <div class="col-3 my-2 border border-2">
+    <div class="col-3 my-3">
 
         <form method="POST" action="{{ route('accounting.update', $account->id) }}">
 
@@ -29,13 +29,15 @@
                     <label class="fw-semibold" for="iban">IBAN: </label>
                     <input type="text" name="iban" id="iban" value="{{ $account->IBAN }}">
                 </div>
-
-                <input class="btn btn-dark my-3" type="submit" value="UPDATE">
-            </div>
-            <div class="bg-success m-2 px-4 py-1 rounded">
-                <a href="{{ route('customers.show') }}" class="text-decoration-none text-secondary-emphasis">
-                    Back
-                </a>
+                <div class="my-4">
+                    <input class="btn btn-dark mx-2" type="submit" value="Update">
+                    <span class="bg-success py-2 px-4 rounded">
+                        <a href="{{ route('customers.show') }}" class="text-decoration-none text-secondary-emphasis">
+                            Back
+                        </a>
+                    </span>
+                    
+                </div>
             </div>
 
         </form>

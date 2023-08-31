@@ -17,11 +17,7 @@
                 <div><span class="fw-semibold">Pay method: </span>{{ $accounting->method_paid }}</div>
                 <span>
                     <span class="fw-semibold">Paid: </span>
-                    @if ($accounting->paid)
-                        Yes
-                    @else
-                        No
-                    @endif
+                    {{ $accounting->paid }}
                 </span>
 
                 <div><span class="fw-semibold">IBAN: </span>{{ $accounting->IBAN }}</div>
@@ -38,6 +34,14 @@
                             Edit
                         </a>
                     </div>
+
+                    <form method="POST" action="{{ route('accounting.delete', $accounting->id) }}">
+
+                        @csrf
+                        @method('DELETE')
+
+                        <input class="btn btn-danger m-2 px-3 py-1 rounded" type="submit" value="Delete">
+                    </form>
                 </div>
             </div>
         @endforeach

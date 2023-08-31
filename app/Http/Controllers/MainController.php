@@ -72,7 +72,7 @@ class MainController extends Controller
     public function accountStore(Request $request)
     {
         $data = $request->all();
-        dd($data);
+
         $accounting = Accounting::create($data);
         return redirect()->route('accountings.show', $accounting->id);
     }
@@ -95,6 +95,13 @@ class MainController extends Controller
         $account = Accounting::FindOrFail($id);
         $data = $request->all();
         $account->update($data);
-        return redirect()->route('customers.show');
+        return redirect()->route('accountings.show', $account->id);
+    }
+
+    public function accountDelete($id)
+    {
+        $account = Accounting::findOrFail($id);
+        $account->delete();
+        return redirect()->route('accountings.show', $account->id);
     }
 }
