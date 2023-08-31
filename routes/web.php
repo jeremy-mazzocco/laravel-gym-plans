@@ -22,7 +22,6 @@ Route::delete('/plans/{id}/delete', [MainController::class, 'plansDelete'])
 
 
 // ACCOUNTING
-
 Route::get('/accounting/create', [MainController::class, 'accountCreate'])
     ->name('accounting.create');
 Route::post('/accounting/store', [MainController::class, 'accountStore'])

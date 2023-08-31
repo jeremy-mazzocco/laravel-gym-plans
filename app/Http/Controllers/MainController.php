@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
+    // CUSTOMER
+
     public function index()
     {
         $customers = Customer::all();
@@ -34,6 +36,7 @@ class MainController extends Controller
     }
 
 
+    // PLANS
 
     public function plansShow($id)
     {
@@ -62,6 +65,8 @@ class MainController extends Controller
         return redirect()->route('customers.show');
     }
 
+
+    // ACCOUNT
 
     public function accountCreate()
     {

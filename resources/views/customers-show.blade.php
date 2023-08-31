@@ -31,14 +31,11 @@
                     </div>
                 </div>
 
-                <div class="d-flex justify-content-between text-center">
-                    <div class="bg-dark m-2 p-1 rounded w-50 ">
-                        <a href="{{ route('customer.edit', $customer->id) }}" class="text-decoration-none text-light">
-                            Edit
-                        </a>
-                    </div>
+                <div class="bg-dark col-5 m-2 p-1 rounded w-50 text-center">
+                    <a href="{{ route('customer.edit', $customer->id) }}" class="text-decoration-none text-light">
+                        Edit
+                    </a>
                 </div>
-
             </div>
         @endforeach
     </div>

@@ -2,11 +2,17 @@
 
 @section('content')
     <div class="container-fluid w-75 row m-auto">
-
-        <div class="bg-dark col-2 m-4 px-4 py-1 rounded text-center">
-            <a href="{{ route('accounting.create') }}" class="text-decoration-none text-light">
-                Make a new Bill
-            </a>
+        <div class="d-flex">
+            <div class="bg-success col-2 m-4 px-4 py-1 rounded text-center">
+                <a href="{{ route('customers.show') }}" class="text-decoration-none text-secondary-emphasis">
+                    Back
+                </a>
+            </div>
+            <div class="bg-dark col-2 m-4 px-4 py-1 rounded text-center">
+                <a href="{{ route('accounting.create') }}" class="text-decoration-none text-light">
+                    Make a new Bill
+                </a>
+            </div>
         </div>
 
         @foreach ($accountings as $accounting)
@@ -23,11 +29,6 @@
                 <div><span class="fw-semibold">IBAN: </span>{{ $accounting->IBAN }}</div>
 
                 <div class="d-flex">
-                    <div class="bg-success m-2 px-4 py-1 rounded">
-                        <a href="{{ route('customers.show') }}" class="text-decoration-none text-secondary-emphasis">
-                            Back
-                        </a>
-                    </div>
 
                     <div class="bg-dark m-2 px-4 py-1 rounded">
                         <a href="{{ route('accounting.edit', $accounting->id) }}" class="text-decoration-none text-light">
